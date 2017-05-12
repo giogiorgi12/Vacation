@@ -1,14 +1,12 @@
-<form [formGroup]="loginForm" (ngSubmit)="doLogin($event)">
-   <div class="container">
+<div class="container">
     <div class="form-group">
-        <label for="username">Name</label>
-        <input formControlName="Name" type="text"  class="form-control" id="username" placeholder="Your Name" />
+        <label for="username">Username</label>
+        <input type="text" placeholder="" class="form-control" id="username" placeholder="Your username" />
     </div>
     <div class="form-group">
-        <label for="password">Password</label>
-        <input formControlName="Password" type="password" placeholder="" class="form-control" id="password" placeholder="Your Password" />
+        <label for="password">Email</label>
+        <input type="password" placeholder="" class="form-control" id="password" placeholder="Your email address" />
     </div>
-        <button type="submit" class="btn btn-block btn-success btn-md">Login</button>
-        <button class="btn btn-block btn-danger btn-lg">Register</button>
-   </div>
- </form>
+    
+        <button class="btn btn-block btn-danger btn-lg">Send Password</button>
+        <button class="btn btn-block btn-danger btn-lg">Cancel</button>
