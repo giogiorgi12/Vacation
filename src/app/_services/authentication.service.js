@@ -9,25 +9,20 @@ var __metadata = (this && this.__metadata) || function (k, v) {
     if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
 };
 var core_1 = require("@angular/core");
-var router_1 = require("@angular/router");
-var LoginComponent = (function () {
-    function LoginComponent(route, router) {
-        this.route = route;
-        this.router = router;
-        this.model = {};
+var http_1 = require("@angular/http");
+require("rxjs/add/operator/map");
+var AuthenticationService = (function () {
+    function AuthenticationService(htttp) {
+        this.htttp = htttp;
     }
-    LoginComponent.prototype.login = function () {
-        console.log(this.model.username + " " + this.model.password);
+    AuthenticationService.prototype.login = function (username, password) {
+        return true;
     };
-    return LoginComponent;
+    return AuthenticationService;
 }());
-LoginComponent = __decorate([
-    core_1.Component({
-        //selector:'pm-app',
-        templateUrl: 'app/login/login.component.html'
-    }),
-    __metadata("design:paramtypes", [router_1.ActivatedRoute,
-        router_1.Router])
-], LoginComponent);
-exports.LoginComponent = LoginComponent;
-//# sourceMappingURL=login.component.js.map
+AuthenticationService = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [http_1.Http])
+], AuthenticationService);
+exports.AuthenticationService = AuthenticationService;
+//# sourceMappingURL=authentication.service.js.map

@@ -10,24 +10,23 @@ var __metadata = (this && this.__metadata) || function (k, v) {
 };
 var core_1 = require("@angular/core");
 var router_1 = require("@angular/router");
-var LoginComponent = (function () {
-    function LoginComponent(route, router) {
-        this.route = route;
+var AuthGuard = (function () {
+    function AuthGuard(router) {
         this.router = router;
-        this.model = {};
     }
-    LoginComponent.prototype.login = function () {
-        console.log(this.model.username + " " + this.model.password);
+    AuthGuard.prototype.canActivate = function (route, state) {
+        //if (localStorage.getItem('user'))
+        //{
+        return true; //for Dev
+        //  }
+        //this.router.navigate(['/login'], { queryParams: { reurnUrl: state.url } });
+        //return false;
     };
-    return LoginComponent;
+    return AuthGuard;
 }());
-LoginComponent = __decorate([
-    core_1.Component({
-        //selector:'pm-app',
-        templateUrl: 'app/login/login.component.html'
-    }),
-    __metadata("design:paramtypes", [router_1.ActivatedRoute,
-        router_1.Router])
-], LoginComponent);
-exports.LoginComponent = LoginComponent;
-//# sourceMappingURL=login.component.js.map
+AuthGuard = __decorate([
+    core_1.Injectable(),
+    __metadata("design:paramtypes", [router_1.Router])
+], AuthGuard);
+exports.AuthGuard = AuthGuard;
+//# sourceMappingURL=auth.guard.js.map

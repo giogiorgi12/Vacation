@@ -13,13 +13,16 @@
     <script src="node_modules/systemjs/dist/system.src.js"></script>
     <!-- Configure SystemJS -->
     <script src="systemjs.config.js"></script>
+    <base href="/">
     <script>
       System.import('main.js').catch(function(err){ console.error(err); });
     </script>
 </head>
 
 <body>
-    <pm-app></pm-app>
+    <app>
+      
+    </app>
  
 </body>
 
